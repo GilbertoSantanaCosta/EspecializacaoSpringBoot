@@ -5,25 +5,22 @@ import org.springframework.stereotype.Component;
 
 import com.food.api.model.Cliente;
 import com.food.api.notificacao.Notificacao;
-import com.food.api.notificacao.NotificacaoEmail;
 
-
+@Component
 public class AtivacaoClienteService {
 
-	@Autowired//Pode ser usado no Atributo , Construtor ou setter
+	@Autowired(required = false) //Deixa a dependencia opcional 
 	private Notificacao notificador;
-	
-	public AtivacaoClienteService(Notificacao notificador) {
-		this.notificador = notificador;
-		
-		System.out.println("AtivaçãoCliente " + notificador);
-	}
-	
+
 	public void ativar(Cliente cliente) {
 		
-		cliente.isAtivo(); 
+		if(notificador != null) {
+			notificador.notificar(cliente, " Cliente esta ativo");
+		}else {
+			System.out.println("Não existe notificador mas cliente foi ativado ");
+		}
 		
-		notificador.notificar(cliente, " Cliente esta ativo");
+		
 		
 	}
 }
