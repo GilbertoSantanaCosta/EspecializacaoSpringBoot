@@ -1,9 +1,11 @@
 package com.food.api.notificacao;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import com.food.api.model.Cliente;
 
+@Primary // Da prioridade a esse bean para que não ocorra anbiguidade 
 @Component
 public class NotificacaoEmail implements Notificacao {
 	

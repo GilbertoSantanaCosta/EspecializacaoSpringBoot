@@ -11,17 +11,13 @@ import com.food.api.notificacao.Notificacao;
 @Component
 public class AtivacaoClienteService {
 
-	@Autowired  
-	private List<Notificacao> notificadores;
+	@Autowired
+	private Notificacao notificador;
 
 	public void ativar(Cliente cliente) {
 		cliente.isAtivo();
-		
-		for(Notificacao notificador : notificadores) {
-			
-			notificador.notificar(cliente, " Cliente esta ativo");
-		}
-		
-		
+
+		notificador.notificar(cliente, " Cliente esta ativo");
+
 	}
 }
