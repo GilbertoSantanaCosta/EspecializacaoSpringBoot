@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.food.api.model.Cliente;
 
-//@Component
+@Component
 public class NotificacaoSMS implements Notificacao {
 	
 	@Override

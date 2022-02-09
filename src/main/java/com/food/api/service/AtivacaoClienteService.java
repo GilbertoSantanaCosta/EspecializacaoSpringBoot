@@ -1,5 +1,7 @@
 package com.food.api.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,17 +11,16 @@ import com.food.api.notificacao.Notificacao;
 @Component
 public class AtivacaoClienteService {
 
-	@Autowired(required = false) //Deixa a dependencia opcional 
-	private Notificacao notificador;
+	@Autowired  
+	private List<Notificacao> notificadores;
 
 	public void ativar(Cliente cliente) {
+		cliente.isAtivo();
 		
-		if(notificador != null) {
+		for(Notificacao notificador : notificadores) {
+			
 			notificador.notificar(cliente, " Cliente esta ativo");
-		}else {
-			System.out.println("Não existe notificador mas cliente foi ativado ");
 		}
-		
 		
 		
 	}

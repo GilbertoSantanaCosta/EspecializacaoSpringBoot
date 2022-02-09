@@ -4,15 +4,14 @@ import org.springframework.stereotype.Component;
 
 import com.food.api.model.Cliente;
 
-
+@Component
 public class NotificacaoEmail implements Notificacao {
 	
 	private boolean caixaAlta;
-	private String hostServidorSmtp;
 	
-	public NotificacaoEmail( String hostServidorSmtp) {
-		
-		this.hostServidorSmtp = hostServidorSmtp;
+	
+	public NotificacaoEmail( ) {
+	
 		System.out.println("notificador por email");
 	
 	}
@@ -22,8 +21,8 @@ public class NotificacaoEmail implements Notificacao {
 			msg = msg.toUpperCase();
 		}
 	
-		System.out.printf("Cliente %s notificado atrasves do email %s usando SMTP %s\n", 
-				cliente.getNome(), cliente.getEmail(), this.hostServidorSmtp , msg);
+		System.out.printf("Cliente %s notificado atrasves do email %s  %s\n", 
+				cliente.getNome(), cliente.getEmail(), msg);
 	}
 
 	public void setCaixaAlta(boolean caixaAlta) {
