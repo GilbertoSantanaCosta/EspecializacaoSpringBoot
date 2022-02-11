@@ -5,21 +5,19 @@ import org.springframework.stereotype.Component;
 
 import com.especializacao.api.model.Cliente;
 
-@Profile("Prod")
+@Profile("dev")
 @TipoDeNotificador(NivelUrgencia.NORMAL)
 @Component
-public class NotificacaoEmail implements Notificacao {
+public class NotificacaoEmailMock implements Notificacao {
 
-	public NotificacaoEmail() {
-
-		System.out.println("notificador por email REAL");
-
+	public NotificacaoEmailMock() {
+		System.out.println("notificador por email MOCK");
 	}
 
 	public void notificar(Cliente cliente, String msg) {
 
-		System.out.printf("Cliente %s notificado atrasves do email %s  %s\n", cliente.getNome(), cliente.getEmail(),
-				msg);
+		System.out.printf("MOCK: (Email Dev) Cliente %s notificado atrasves do email %s  %s\n", cliente.getNome(),
+				cliente.getEmail(), msg);
 	}
 
 }
