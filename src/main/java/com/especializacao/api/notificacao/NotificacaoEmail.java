@@ -1,12 +1,10 @@
-package com.food.api.notificacao;
+package com.especializacao.api.notificacao;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-import com.food.api.model.Cliente;
+import com.especializacao.api.model.Cliente;
 
-@Qualifier("normal")
+@TipoDeNotificador(NivelUrgencia.NORMAL)
 @Component
 public class NotificacaoEmail implements Notificacao {
 	

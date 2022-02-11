@@ -1,6 +1,6 @@
-package com.food.api.notificacao;
+package com.especializacao.api.notificacao;
 
-import com.food.api.model.Cliente;
+import com.especializacao.api.model.Cliente;
 
 public interface Notificacao {
 

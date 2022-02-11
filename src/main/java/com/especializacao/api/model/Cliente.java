@@ -1,4 +1,4 @@
-package com.food.api.model;
+package com.especializacao.api.model;
 
 public class Cliente {
 

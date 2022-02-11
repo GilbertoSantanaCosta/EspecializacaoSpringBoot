@@ -1,18 +1,20 @@
-package com.food.api.service;
+package com.especializacao.api.service;
 
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+
 import org.springframework.stereotype.Component;
 
-import com.food.api.model.Cliente;
-import com.food.api.notificacao.Notificacao;
+import com.especializacao.api.model.Cliente;
+import com.especializacao.api.notificacao.NivelUrgencia;
+import com.especializacao.api.notificacao.Notificacao;
+import com.especializacao.api.notificacao.TipoDeNotificador;
 
 @Component
 public class AtivacaoClienteService {
 
-	@Qualifier("urgente") // Define qual bean sera  usado primeiro 
+	@TipoDeNotificador(NivelUrgencia.URGENTE)
 	@Autowired
 	private Notificacao notificador;
 
