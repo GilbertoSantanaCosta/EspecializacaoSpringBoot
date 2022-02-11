@@ -1,13 +1,13 @@
 package com.especializacao.api;
 
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.especializacao.api.model.Cliente;
 import com.especializacao.api.service.AtivacaoClienteService;
 
-@Controller
+//@Controller
 public class MeuPrimeiroController {
 
 	private AtivacaoClienteService ativacaoClienteService;
