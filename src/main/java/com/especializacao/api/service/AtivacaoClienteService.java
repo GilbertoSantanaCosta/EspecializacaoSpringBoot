@@ -2,40 +2,45 @@ package com.especializacao.api.service;
 
 
 
+
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import com.especializacao.api.model.Cliente;
 import com.especializacao.api.notificacao.NivelUrgencia;
 import com.especializacao.api.notificacao.Notificacao;
 import com.especializacao.api.notificacao.TipoDeNotificador;
 
-//@Component
+@Component
 public class AtivacaoClienteService {
 
-	@TipoDeNotificador(NivelUrgencia.URGENTE)
 	@Autowired
-	private Notificacao notificador;
+	private ApplicationEventPublisher eventPublisher;
 	
-	//@PostConstruct
+	
+	@PostConstruct
 	public void init() {
 		System.out.println("INIT");
 	}
 	
-	//@PreDestroy
+	@PreDestroy
 	public void destroy() {
 		System.out.println("DESTROY");
 	}
 	
+	
+	
 	public void ativar(Cliente cliente) {
 		cliente.isAtivo();
+		
+		eventPublisher.publishEvent(new ClienteAtivadoEvent(cliente));
 
-		notificador.notificar(cliente, " Cliente esta ativo");
+		
 
 	}
 }
