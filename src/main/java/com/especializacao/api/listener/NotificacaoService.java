@@ -13,7 +13,7 @@ import com.especializacao.api.service.ClienteAtivadoEvent;
 public class NotificacaoService {
 
 
-	@TipoDeNotificador(NivelUrgencia.NORMAL)
+	@TipoDeNotificador(NivelUrgencia.URGENTE)
 	@Autowired
 	private Notificacao notificador;
 	

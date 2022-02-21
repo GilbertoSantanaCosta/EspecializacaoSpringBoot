@@ -1,12 +1,12 @@
 package com.especializacao.api.notificacao;
 
-import org.springframework.context.annotation.Profile;
+
 import org.springframework.stereotype.Component;
 
 import com.especializacao.api.model.Cliente;
 
-@Profile("dev")
-@TipoDeNotificador(NivelUrgencia.NORMAL)
+//@Profile("dev")
+//@TipoDeNotificador(NivelUrgencia.NORMAL)
 @Component
 public class NotificacaoEmailMock implements Notificacao {
 

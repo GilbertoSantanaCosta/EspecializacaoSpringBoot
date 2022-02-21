@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import com.especializacao.api.model.Cliente;
 
 //@Profile("Prod")
-@TipoDeNotificador(NivelUrgencia.NORMAL)
+@TipoDeNotificador(NivelUrgencia.URGENTE)
 @Component
 public class NotificacaoEmail implements Notificacao {
 

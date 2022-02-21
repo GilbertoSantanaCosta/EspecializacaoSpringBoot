@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.especializacao.api.model.Cliente;
 
-@TipoDeNotificador(NivelUrgencia.URGENTE)
+@TipoDeNotificador(NivelUrgencia.NORMAL)
 @Component
 public class NotificacaoSMS implements Notificacao {
 	
