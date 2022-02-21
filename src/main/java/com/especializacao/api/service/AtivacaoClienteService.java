@@ -12,9 +12,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 import com.especializacao.api.model.Cliente;
-import com.especializacao.api.notificacao.NivelUrgencia;
-import com.especializacao.api.notificacao.Notificacao;
-import com.especializacao.api.notificacao.TipoDeNotificador;
+
 
 @Component
 public class AtivacaoClienteService {
