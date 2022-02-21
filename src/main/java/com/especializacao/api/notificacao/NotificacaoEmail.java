@@ -12,23 +12,19 @@ import com.especializacao.api.model.Cliente;
 @Component
 public class NotificacaoEmail implements Notificacao {
 
-	@Value("${notificador.email.host}")
-	private String host;
-	
-	@Value("${notificador.email.porta}")
-	private Integer port;
-	
-	
+	@Autowired
+	private NotificacaoProperties properties;
 	
 	public NotificacaoEmail() {
-	
+
 	}
+
 	@Override
 	public void notificar(Cliente cliente, String msg) {
 
-		System.out.println("Host: " + host + " Porta: " + port);
+		System.out.println("Host: " + properties.getHost() + " Porta: " + properties.getPort());
 		System.out.println("notificador por email REAL");
- 
+
 		System.out.printf("Cliente %s notificado atrasves do email %s  %s\n", cliente.getNome(), cliente.getEmail(),
 				msg);
 	}
